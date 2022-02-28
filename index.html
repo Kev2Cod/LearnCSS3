@@ -4,53 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transition</title>
-    <style>
-        body{
-            padding: 0;
-            margin: 0;
-        }
-        
-        .container{
-            width: 900px;
-            margin: 10px auto;
-            border: 5px solid black;
-        }
+    <title>Animation</title>
 
+    <style>
         .kotak{
             width: 100px;
             height: 100px;
             background-color: salmon;
-            text-align: center;
-            line-height: 100px;
-            border: 1px solid black;
+    
+            animation: animasiKotak 2s ease infinite alternate forwards pause;
         }
+/* 
+        .kotak:hover{
 
-        .kotak1{transition: all 3s ease 2s;} /* Ada Dela*/
-        .kotak2{transition: margin-left 3s ease-in, transform 3s 3s, background-color 1ms 3s;}
-        .kotak3{transition: all 3s ease-out;}
-        .kotak4{transition: all 3s ease-in-out;}
-        .kotak5{transition: all 3s linear;}
-        .kotak6{transition: all 3s cubic-bezier(0.53,-0.31, 0, 1.25);}
+        } */
+        
+        @keyframes animasiKotak {
+            0%{
+                width: 100px;
+            }
+            
+            50%{
+                width: 500px;
+                height: 200px;
+            }
 
-        .container:hover .kotak{
-            transform: rotate(720deg);
-            margin-left: 800px;
-            background-color: lightseagreen;
+            100%{
+                width: 500px;
+                height: 500px;
+            }
+            
         }
-
     </style>
+
 </head>
 <body>
-    <div class="container">
-        <div class="kotak kotak1">ease</div>
-        <div class="kotak kotak2">ease-in</div>
-        <div class="kotak kotak3">ease-out</div>
-        <div class="kotak kotak4">ease-in-out</div>
-        <div class="kotak kotak5">Linear</div>
-        <div class="kotak kotak6">cubic-bezier</div>
-    </div>
-    
-    
+    <div class="kotak"></div>
 </body>
 </html>
