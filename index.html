@@ -4,38 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transfor 2D</title>
+    <title>Transition</title>
     <style>
-
-        .kotak{
-            width: 200px;
-            height: 200px;
-            background-color: lightblue;
-            margin: 50px auto 0;
-            transition: 1s;
+        body{
+            padding: 0;
+            margin: 0;
         }
         
-        .kotak:hover{
-            /* transform: scaleX(3) scaleY(0.8); */
-            /* transform: rotate(90deg) rotateX(180deg); */
-            /* transform: skew(10deg); */
-            transform: translate(50px, -50px);
+        .container{
+            width: 900px;
+            margin: 10px auto;
+            border: 5px solid black;
         }
 
-        /* 
-            scale(angka), scaleX(angka), scaleY(angka)
-            rotate(deg), rotate(deg), rotate(deg)
-            skew(deg), skewX(deg), skewY(deg)
-            translate(px), translateX(px), translate(px)
-        */
+        .kotak{
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid black;
+        }
+
+        .kotak1{transition: all 3s ease 2s;} /* Ada Dela*/
+        .kotak2{transition: margin-left 3s ease-in, transform 3s 3s, background-color 1ms 3s;}
+        .kotak3{transition: all 3s ease-out;}
+        .kotak4{transition: all 3s ease-in-out;}
+        .kotak5{transition: all 3s linear;}
+        .kotak6{transition: all 3s cubic-bezier(0.53,-0.31, 0, 1.25);}
+
+        .container:hover .kotak{
+            transform: rotate(720deg);
+            margin-left: 800px;
+            background-color: lightseagreen;
+        }
 
     </style>
 </head>
 <body>
-
-    <div class="kotak"></div>
-
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni modi eius blanditiis cumque ex, molestias fugiat doloremque atque. Assumenda a iusto quo sequi voluptatibus ratione temporibus, unde aut necessitatibus quas?</p>
+    <div class="container">
+        <div class="kotak kotak1">ease</div>
+        <div class="kotak kotak2">ease-in</div>
+        <div class="kotak kotak3">ease-out</div>
+        <div class="kotak kotak4">ease-in-out</div>
+        <div class="kotak kotak5">Linear</div>
+        <div class="kotak kotak6">cubic-bezier</div>
+    </div>
+    
     
 </body>
 </html>
